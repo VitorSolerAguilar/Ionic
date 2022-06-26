@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-chip (click)="voltar()">
+        <ion-label>
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </ion-label>
+      </ion-chip> Consulta de Cliente
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="cliente.fisica === true">
+  <ion-card>
+    <img src="../assets/rr.jpg" />
+    <ion-card-header>
+      <ion-card-subtitle>Cliente</ion-card-subtitle>
+      <ion-card-title>{{cliente.nome}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-header>
+      <ion-card-subtitle>telefone</ion-card-subtitle>
+      <ion-card-title>{{cliente.telefone}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-header>
+      <ion-card-subtitle>CPF</ion-card-subtitle>
+      <ion-card-title>{{cliente.cpf}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-header>
+      <ion-card-subtitle>Data de Nascimento</ion-card-subtitle>
+      <ion-card-title>{{cliente.dataDeNascimento}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-card-subtitle>Observação</ion-card-subtitle>
+      <ion-card-title>{{cliente.observacoes}}</ion-card-title>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+<ion-content *ngIf="cliente.fisica === false">
+  <h1>Consulta de cliente empresarial</h1>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Cliente</ion-card-subtitle>
+      <ion-card-title>{{cliente.nomeFantasia}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-header>
+      <ion-card-subtitle>Razao Social</ion-card-subtitle>
+      <ion-card-title>{{cliente.razaoSocial}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
